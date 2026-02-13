@@ -3,99 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - JHMT RO BOH EDT Registration System</title>
+    <title>Privacy Policy - JHMT EDT Registration System</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="common.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>JHMT RO BOH EDT Registration System</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    <li><a href="privacy-policy.html" class="active">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <div class="container">
             <section class="content">
-                <h2>Privacy Policy</h2>
-                <p class="last-updated">Last Updated: February 13, 2026</p>
+                <h2>Privacy Policy — JHMT EDT Registration System</h2>
+                <p class="last-updated">Last updated: February 11, 2026</p>
 
-                <h3>1. Introduction</h3>
-                <p>This Privacy Policy describes how the JHMT RO BOH EDT Registration System ("we", "us", or "our") collects, uses, and protects your personal information when you use our System.</p>
+                <h3>Who we are</h3>
+                <p>The JHMT EDT Registration System is a Bank of Humanity (BOH) Educational Summits tool for JHMT official facilitators. It supports registration token requests, and integrates with BOH-approved services. It will evolve into a one-stop hub for BOH-JHMT activities.</p>
 
-                <h3>2. Information We Collect</h3>
-                <p>We collect several types of information from and about users of our System, including:</p>
+                <h3>What this app does</h3>
                 <ul>
-                    <li><strong>Personal Information:</strong> Name, email address, contact information, and other identifying information you provide during registration</li>
-                    <li><strong>Usage Data:</strong> Information about how you use the System, including access times, pages viewed, and the routes by which you access our System</li>
-                    <li><strong>Technical Data:</strong> IP address, browser type and version, time zone setting, browser plug-in types and versions, operating system and platform</li>
+                    <li>Authenticates authorized JHMT facilitators using their session email</li>
+                    <li>Manages EDT (Ecosystems Development Training) registrations and registration token-related requests</li>
+                    <li>Generates a CSV file formatted to suit BOH-required data for certifications</li>
+                    <li>Sends transactional emails (e.g., confirmations, updates)</li>
                 </ul>
 
-                <h3>3. How We Use Your Information</h3>
-                <p>We use the information we collect about you to:</p>
+                <h3>Information we collect</h3>
                 <ul>
-                    <li>Provide, maintain, and improve our System</li>
-                    <li>Process your registration and manage your account</li>
-                    <li>Communicate with you about your account or the System</li>
-                    <li>Respond to your requests, questions, and feedback</li>
-                    <li>Monitor and analyze trends, usage, and activities in connection with our System</li>
-                    <li>Detect, prevent, and address technical issues and security threats</li>
+                    <li>Session email address (to verify you are an authorized facilitator)</li>
+                    <li>Registration details and token request information you submit</li>
+                    <li>Operational logs for security/troubleshooting (non-sensitive metadata)</li>
                 </ul>
 
-                <h3>4. Information Sharing and Disclosure</h3>
-                <p>We do not sell, trade, or otherwise transfer your personal information to outside parties except in the following circumstances:</p>
+                <h3>How we use your information</h3>
                 <ul>
-                    <li>With your consent</li>
-                    <li>To comply with legal obligations, such as responding to subpoenas or court orders</li>
-                    <li>To protect the rights, property, or safety of our System, our users, or others</li>
-                    <li>In connection with a merger, acquisition, or sale of assets</li>
+                    <li>To authenticate and authorize access (facilitators only)</li>
+                    <li>To process registrations and token requests</li>
+                    <li>To help regional heads analyze reports for load replenishment purposes.</li>
+                    <li>To send necessary transactional emails related to your activity</li>
                 </ul>
 
-                <h3>5. Data Security</h3>
-                <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized or unlawful processing, accidental loss, destruction, or damage. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+                <h3>Data storage and retention</h3>
+                <p>Relevant data may be stored in JHMT-managed systems (including Google BigQuery). We do not sell your data. Data is retained as required for BOH-JHMT operations, compliance, and auditing, then deleted or anonymized per policy.</p>
 
-                <h3>6. Data Retention</h3>
-                <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+                <h3>Data sharing</h3>
+                <p>Data may be shared with BOH-approved systems strictly to operate the service (e.g., CocoonHub). We do not share data with third parties for advertising or marketing.</p>
 
-                <h3>7. Your Rights</h3>
-                <p>You have the right to:</p>
+                <h3>Permissions this app requests</h3>
                 <ul>
-                    <li>Access the personal information we hold about you</li>
-                    <li>Request correction of inaccurate or incomplete information</li>
-                    <li>Request deletion of your personal information</li>
-                    <li>Object to or restrict the processing of your personal information</li>
-                    <li>Withdraw your consent at any time (where processing is based on consent)</li>
+                    <li>Send email (to deliver confirmations/notifications)</li>
+                    <li>Your email address (to verify identity and enforce access)</li>
+                    <li>External connections (to securely call CardanoScan services and Google APIs)</li>
                 </ul>
 
-                <h3>8. Cookies and Tracking Technologies</h3>
-                <p>Our System may use cookies and similar tracking technologies to enhance user experience, analyze usage patterns, and improve our services. You can control cookie settings through your browser preferences.</p>
+                <h3>Security</h3>
+                <p>We rely on Google's security (Apps Script, OAuth) controls. Access is restricted to authorized users. No system is 100% secure; please protect your account credentials.</p>
 
-                <h3>9. Children's Privacy</h3>
-                <p>Our System is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you become aware that a child has provided us with personal information, please contact us.</p>
+                <h3>Your choices</h3>
+                <ul>
+                    <li>You may decline permissions; some features will not work without them.</li>
+                    <li>You may request correction or deletion of registration data where applicable.</li>
+                </ul>
 
-                <h3>10. Changes to This Privacy Policy</h3>
-                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                <h3>Children's data</h3>
+                <p>This app is intended for authorized facilitators and not for children.</p>
 
-                <h3>11. Contact Us</h3>
-                <p>If you have any questions about this Privacy Policy or our data practices, please contact the system administrators.</p>
+                <h3>Contact</h3>
+                <p>For questions or requests regarding this policy, contact the JHMT admin (admin@jhmt.org).</p>
             </section>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 JHMT RO BOH EDT Registration System. All rights reserved.</p>
-            <p>
-                <a href="terms-of-service.html">Terms of Service</a> | 
-                <a href="privacy-policy.html">Privacy Policy</a>
-            </p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 </body>
 </html>
