@@ -1,46 +1,48 @@
-// Load common header and footer
-document.addEventListener('DOMContentLoaded', function() {
-    // Load header
-    fetch('header.html')
+// Helper function to load HTML content into a placeholder
+function loadHTMLContent(filename, placeholderId, callback) {
+    fetch(filename)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to load header: ' + response.status);
+                throw new Error(`Failed to load ${filename}: ${response.status}`);
             }
             return response.text();
         })
         .then(data => {
-            const headerPlaceholder = document.getElementById('header-placeholder');
-            if (headerPlaceholder) {
-                headerPlaceholder.outerHTML = data;
-                // Set active navigation link
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                if (currentPage === 'index.html' || currentPage === '') {
-                    const homeLink = document.getElementById('nav-home');
-                    if (homeLink) homeLink.classList.add('active');
-                } else if (currentPage === 'terms-of-service.html') {
-                    const termsLink = document.getElementById('nav-terms');
-                    if (termsLink) termsLink.classList.add('active');
-                } else if (currentPage === 'privacy-policy.html') {
-                    const privacyLink = document.getElementById('nav-privacy');
-                    if (privacyLink) privacyLink.classList.add('active');
+            const placeholder = document.getElementById(placeholderId);
+            if (placeholder) {
+                placeholder.outerHTML = data;
+                if (callback) {
+                    callback();
                 }
             }
         })
-        .catch(error => console.error('Error loading header:', error));
+        .catch(error => console.error(`Error loading ${filename}:`, error));
+}
 
+// Set active navigation link based on current page
+function setActiveNavigation() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navMap = {
+        'index.html': 'nav-home',
+        '': 'nav-home',
+        'terms-of-service.html': 'nav-terms',
+        'privacy-policy.html': 'nav-privacy'
+    };
+    
+    const navId = navMap[currentPage];
+    if (navId) {
+        const navLink = document.getElementById(navId);
+        if (navLink) {
+            navLink.classList.add('active');
+        }
+    }
+}
+
+// Load common header and footer
+document.addEventListener('DOMContentLoaded', function() {
+    // Load header with callback to set active navigation
+    loadHTMLContent('header.html', 'header-placeholder', setActiveNavigation);
+    
     // Load footer
-    fetch('footer.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to load footer: ' + response.status);
-            }
-            return response.text();
-        })
-        .then(data => {
-            const footerPlaceholder = document.getElementById('footer-placeholder');
-            if (footerPlaceholder) {
-                footerPlaceholder.outerHTML = data;
-            }
-        })
-        .catch(error => console.error('Error loading footer:', error));
+    loadHTMLContent('footer.html', 'footer-placeholder');
 });
