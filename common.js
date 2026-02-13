@@ -2,7 +2,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Load header
     fetch('header.html')
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load header: ' + response.status);
+            }
+            return response.text();
+        })
         .then(data => {
             const headerPlaceholder = document.getElementById('header-placeholder');
             if (headerPlaceholder) {
@@ -25,7 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load footer
     fetch('footer.html')
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load footer: ' + response.status);
+            }
+            return response.text();
+        })
         .then(data => {
             const footerPlaceholder = document.getElementById('footer-placeholder');
             if (footerPlaceholder) {
